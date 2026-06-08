@@ -83,6 +83,20 @@ For other agents, the cross-tool [`skills`](https://github.com/vercel-labs/skill
 npx skills add ~/Documents/GitHub/skills
 ```
 
+## Versioning
+
+This repository uses **commit-based versioning** — there is no version number to bump. Once a pull request is merged, the change reaches users on their next `/plugin update` (Claude Code) or `npx skills add` (other agents). Practically:
+
+- You don't need to edit any version field when adding or updating a skill.
+- The `jspsych` plugin entry in [`.claude-plugin/marketplace.json`](.claude-plugin/marketplace.json) intentionally has **no `version` field**, so Claude Code falls back to the git commit SHA and treats every merged commit as a new version. (Note: the `metadata.version` in that file is the marketplace's own version, not the plugin's.)
+- A per-skill version is **optional and informational only**. The [Agent Skills standard](https://agentskills.io/specification) has no first-class `version` field; if you want to record one, put it under `metadata` in the skill's `SKILL.md` frontmatter — nothing reads or acts on it:
+  ```yaml
+  metadata:
+    version: "1.0"
+  ```
+
+If this repo later moves to explicit, documented releases, we'd add a `version` to the plugin entry, bump it per release following [semantic versioning](https://semver.org), and maintain a `CHANGELOG.md`. Until then, keep changes small and reviewable so continuous delivery stays safe.
+
 ## Pull request review
 
 PRs are reviewed for:
