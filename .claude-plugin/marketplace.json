@@ -1,0 +1,23 @@
+{
+  "name": "jspsych-skills",
+  "owner": {
+    "name": "Josh de Leeuw",
+    "email": "josh.deleeuw@gmail.com"
+  },
+  "metadata": {
+    "description": "Agent skills for building with jsPsych",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "jspsych",
+      "source": "./",
+      "strict": false,
+      "description": "Skills for jsPsych development: building plugins and creating shareable timelines (experiment components).",
+      "skills": [
+        "./skills/jspsych-plugin-builder",
+        "./skills/jspsych-timeline-builder"
+      ]
+    }
+  ]
+}
