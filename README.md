@@ -15,7 +15,7 @@ A collection of [Agent Skills](https://agentskills.io) for building experiments 
 
 ```text
 /plugin marketplace add jspsych/skills
-/plugin install jspsych@jspsych-skills
+/plugin install jspsych@skills
 ```
 
 This installs the `jspsych` plugin, which bundles both skills. Claude loads a skill automatically when your request matches its description, or you can invoke one directly with `/jspsych-plugin-builder` or `/jspsych-timeline-builder`.
@@ -49,11 +49,7 @@ Each skill is a self-contained folder with a `SKILL.md` (YAML frontmatter + inst
 
 ## Contributing
 
-To add a skill:
-
-1. Create `skills/<skill-name>/SKILL.md` with `name` and `description` frontmatter. Put the key use case first in the description — agents use it to decide when to load the skill. Keep `SKILL.md` under ~500 lines and move long reference material into supporting files in the same folder.
-2. Add the skill's path to the `skills` array in [`.claude-plugin/marketplace.json`](.claude-plugin/marketplace.json).
-3. Add a row to the Skills table above.
+New skills are welcome via pull request. See [CONTRIBUTING.md](CONTRIBUTING.md) for the skill format, the checklist for adding a skill, and review criteria.
 
 ## License
 
